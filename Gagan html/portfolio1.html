@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: rgb(80, 178, 190);
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: white;
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 2rem;
+    }
+
+    .hero div {
+      max-width: 500px;
+    }
+
+    section {
+      padding: 2rem;
+      background: white;
+      margin: 1rem 0;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-card {
+      flex: 1 1 45%;
+      background: #eee;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.75rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero img {
+        margin: 0 0 1rem 0;
+      }
+
+      .projects-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Gagandeep Singh</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="data:image/jpeg;base64,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" alt="Profile Picture">
+    <div>
+      <h2>Hello! I'm Gagan</h2>
+      <p>I build websites using HTML, CSS, and JavaScript.</p>
+      <p>I love clean design and responsive layouts.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me,</h2>
+    <p>I'm a self-taught web developer who enjoys turning ideas into websites.</p>
+    <p>My focus is on front-end development, but I also dabble in back-end technologies.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 1">
+        <h3>Project One</h3>
+        <p>A simple responsive landing page built with HTML and CSS.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/project2.jpg" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>A basic JavaScript to-do list app with local storage support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Gagandeep Singh</p>
+  </footer>
+
+</body>
+</html>
